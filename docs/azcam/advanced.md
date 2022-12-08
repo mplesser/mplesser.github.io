@@ -1,8 +1,6 @@
 ---
 title: "Advanced"
 date: 2022-12-08
-draft: false
-weight: 28
 ---
 
 # Advanced

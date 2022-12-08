@@ -1,8 +1,8 @@
 @echo off
 
-rem pdoc --no-show-source -d google -o ..\..\mplesser.github.io\docs\ ..\azcam 
+pdoc --no-show-source -d google -o ../docs/code/azcam azcam 
 
 rem for dev...
-pdoc -d google azcam 
+rem pdoc -d google azcam 
 
-rem pause
+pause

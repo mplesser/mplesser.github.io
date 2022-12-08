@@ -1,10 +1,8 @@
-# Documentation Site
-
-## Software Documentation
+# Software Documentation
   - [AzCam documentation](https://mplesser.github.io/azcam/)
   - [GitHub repos](https://github.com/mplesser)
 
-## ITL Related Links
+# ITL Related Links
   - [ITL Home](https://www.itl.arizona.edu)
   - [Steward Observatory](https://www.as.arizona.edu)
   - [University of Arizona](https://www.arizona.edu)
