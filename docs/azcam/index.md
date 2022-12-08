@@ -15,7 +15,7 @@ AzCam is not appropriate for consumer-level cameras and is not intended to have 
     - [AzCam documentation site](https://mplesser.github.io/azcam/)
     - [GitHub repos](https://github.com/mplesser)
   - Code details and links
-    - [Tools](tools.md)
+    - [Tools](tools/tools.md)
     - [Classes](classes.md)
     - [Commands](commands.md)
   - Advanced concepts
