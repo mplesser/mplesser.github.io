@@ -23,8 +23,8 @@ theme:
     repo: fontawesome/brands/git-alt
   features:
     navigation.sections
-  include_search_page: true
-  search_index_only: false
+  include_search_page: false
+  search_index_only: true
   prev_next_buttons_location: both
 
 markdown_extensions:
