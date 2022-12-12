@@ -311,6 +311,18 @@ webserver.index = f"index_mysystem.html"
 webserver.start()
 ```
 
+## Browser-based Tools`
+
+These tools implements various browser-based tools which connect to an azcam web server.
+
+### Usage
+
+Open a web browser to http://localhost:2403/XXX where XXX is a toolname, with the appropriate replacements for localhost and the web server port number.
+
+### Supported Browser Tools
+ - status - display current exposure status
+ - exptool - a simple exposure control tool
+
 ## Console Tools
 
 Console tools are commands which can be called from a console application to send the equivalent command to a server process.  Commands are typically accessed in a console process as `toolname.commandname(parameters)`, e.g. `instrument.get_wavelength()`.

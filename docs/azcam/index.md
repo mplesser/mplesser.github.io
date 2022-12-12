@@ -10,7 +10,7 @@ AzCam is based on the concept of *tools* which are the interfaces to both hardwa
 
 AzCam is not appropriate for consumer-level cameras and is not intended to have a common API across all systems. It's primary design principle is to allow interfacing to a wide variety of custom instrumentation which is required to acquire and analyze scientific image data.
 
-## AzCam Links
+# AzCam Links
   - Main links
     - [AzCam documentation site](https://mplesser.github.io/azcam/)
     - [GitHub repos](https://github.com/mplesser)
@@ -49,9 +49,10 @@ instrument.set_wavelength(450)
 wavelength = instrument.get_wavelength()
 print(f"Current wavelength is {wavelength}")
 exposure.expose(2., 'flat', "a 450 nm flat field image")
-
+```
 or
 
+```python
 # client-side (azcamconsole)
 import azcam
 import azam_itl.console
@@ -98,20 +99,7 @@ exposure.expose(2., 'flat', "a 450 nm flat field image")
 
 There are many supported tools within azcam. See [Tools] for detailed information.
 
-
-# AzCam Web Tools - `azcam.tools.webtools`
-
-These tools implements various browser-based tools which connect to an azcam web server.
-
-### Usage
-
-Open a web browser to http://localhost:2403/XXX where XXX is a toolname, with the appropriate replacements for localhost and the web server port number.
-
-### Browser Tools
- - status - display current exposure status
- - exptool - a simple exposure control tool
-
-## AzCam Environments
+# AzCam Environments
 
 Some packages act as *environments* to define code and data files used for specific hardware systems. Examples include:
 
@@ -119,7 +107,7 @@ Some packages act as *environments* to define code and data files used for speci
   * [azcam-mont4k](https://github.com/mplesser/azcam-mont4k) for the UArizona Mont4k instrument
   * [azcam-vattspec](https://github.com/mplesser/azcam-vattspec) for the VATT VattSpec camera
 
-## AzCam Applications
+# AzCam Applications
 AzCam *applications* are stand-alone programs which utilize AzCam functionality. The most important application is *azcamserver* which defines the tools for a hardware system. Most but not all applications are clients which connect to an *azcamserver* application. These clients cab be written in any languages.  Some are experimental or still in development. Examples include:
 
   * [azcam-expstatus](https://github.com/mplesser/azcam-expstatus): a small GUI which displays exposure progress 
@@ -129,14 +117,14 @@ AzCam *applications* are stand-alone programs which utilize AzCam functionality.
   * [azcam-observe](https://github.com/mplesser/azcam-observe) add observing scripts which support a Qt-based GUI and command line interface
     * [azcam-observe code docs can be found here](https://mplesser.github.io/docs/azcam_observe/index.html)
 
-## Help
+# Help
 AzCam is commonly used with IPython.  Help is then available by typing `?xxx`, `xxx?`, `xxx??` or `help(xxx)` where `xxx` is an AzCam class, command, or object instance.
 
 Useful links include:
 * IPython <https://ipython.org>
 * Python programming language <https://www.python.org>
 
-## Command Structure
+# Command Structure
 The AzCam command structure provides a fairly uniform interface which can be used from the local command line (CLI), a remote socket connection, or the web interface.  An example for taking a 2.5 second *flat field* exposure is:
 
 Local CLI or script example:
