@@ -556,6 +556,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#browser-based-tools" class="md-nav__link">
+    Browser-based Tools`
+  </a>
+  
+    <nav class="md-nav" aria-label="Browser-based Tools`">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-browser-tools" class="md-nav__link">
+    Supported Browser Tools
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#console-tools" class="md-nav__link">
     Console Tools
   </a>
@@ -824,6 +851,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#browser-based-tools" class="md-nav__link">
+    Browser-based Tools`
+  </a>
+  
+    <nav class="md-nav" aria-label="Browser-based Tools`">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-browser-tools" class="md-nav__link">
+    Supported Browser Tools
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#console-tools" class="md-nav__link">
     Console Tools
   </a>
@@ -1073,6 +1127,15 @@ or
 <span class="n">webserver</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;index_mysystem.html&quot;</span>
 <span class="n">webserver</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 </code></pre></div>
+<h2 id="browser-based-tools">Browser-based Tools`</h2>
+<p>These tools implements various browser-based tools which connect to an azcam web server.</p>
+<h3 id="usage">Usage</h3>
+<p>Open a web browser to http://localhost:2403/XXX where XXX is a toolname, with the appropriate replacements for localhost and the web server port number.</p>
+<h3 id="supported-browser-tools">Supported Browser Tools</h3>
+<ul>
+<li>status - display current exposure status</li>
+<li>exptool - a simple exposure control tool</li>
+</ul>
 <h2 id="console-tools">Console Tools</h2>
 <p>Console tools are commands which can be called from a console application to send the equivalent command to a server process.  Commands are typically accessed in a console process as <code>toolname.commandname(parameters)</code>, e.g. <code>instrument.get_wavelength()</code>.</p>
 <p>A console tool may be obtained by <code>toolname = azcam.get_tools("toolname")</code> where <em>toolname</em> is like <em>exposure</em>, <em>instrument</em>, or <em>tempcon</em>.  A tool may also be accessed as <em>azcam.db.toolname</em>, like <code>azcam.db.controller</code>. </p>

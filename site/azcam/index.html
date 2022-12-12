@@ -291,40 +291,9 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Overview
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         Overview
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#azcam-links" class="md-nav__link">
-    AzCam Links
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -477,21 +446,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#azcam-links" class="md-nav__link">
-    AzCam Links
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -512,7 +466,7 @@
 <p>AzCam is a software framework for the acquisition and analysis of image data from scientific imaging systems as well as the control of instrumentation. It is intended to be customized for specific hardware, observational, and data reduction requirements.</p>
 <p>AzCam is based on the concept of <em>tools</em> which are the interfaces to both hardware and software code.  Examples of tools are <em>instrument</em> which controls instrument hardware, <em>telescope</em> which interfaces to a telescope, <em>linearity</em> which acquires and analyzes images to determine sensor linearity, and <em>exposure</em> which controls a scientific observation by interfacing with a variety of other tools. As an example, the <em>exposure</em> tool may move a telescope and multiple filter wheels, control a camera shutter, operate the camera by taking an exposure, display the resultant image, and begin data reduction of that image.</p>
 <p>AzCam is not appropriate for consumer-level cameras and is not intended to have a common API across all systems. It's primary design principle is to allow interfacing to a wide variety of custom instrumentation which is required to acquire and analyze scientific image data.</p>
-<h2 id="azcam-links">AzCam Links</h2>
+<h1 id="azcam-links">AzCam Links</h1>
 <ul>
 <li>Main links<ul>
 <li><a href="https://mplesser.github.io/azcam/">AzCam documentation site</a></li>
@@ -547,7 +501,7 @@
 <p>Tools defined on the server side may or may not be available as remote commands from a client. </p>
 <p>In <em>azcamconsole</em>, the available tools usually communication from the console to an <em>azcamserver</em> application over a socket interface.  These client-side tools may only expose a limited set of methods as compared to the server-side tools. So while the command <code>exposure.reset</code> may be available from a client the command <code>exposure.set_video_gain</code> may not be.  These less commonly used commands are still accessible, but only with lower level code such as <code>server.command("controller.set_video_gain 2")</code> where <code>server</code> is a client's server communication tool.</p>
 <p>As an specific example, the code below can be used to set the current system wavelength and take an exposure.  For this example, it is assumed here that the <em>azcam-itl</em> environment package has been installed (see <a href="#azcam-environments">Environments</a> below.).</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># server-side (azcamserver)</span>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># server-side (azcamserver)</span>
 <span class="kn">import</span> <span class="nn">azcam</span>
 <span class="kn">import</span> <span class="nn">azcam_itl.server</span>
 <span class="n">instrument</span> <span class="o">=</span> <span class="n">azcam</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">tools</span><span class="p">[</span><span class="s2">&quot;instrument&quot;</span><span class="p">]</span>
@@ -556,10 +510,9 @@
 <span class="n">wavelength</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">get_wavelength</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Current wavelength is </span><span class="si">{</span><span class="n">wavelength</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="n">exposure</span><span class="o">.</span><span class="n">expose</span><span class="p">(</span><span class="mf">2.</span><span class="p">,</span> <span class="s1">&#39;flat&#39;</span><span class="p">,</span> <span class="s2">&quot;a 450 nm flat field image&quot;</span><span class="p">)</span>
-
-<span class="ow">or</span>
-
-<span class="c1"># client-side (azcamconsole)</span>
+</code></pre></div>
+or</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># client-side (azcamconsole)</span>
 <span class="kn">import</span> <span class="nn">azcam</span>
 <span class="kn">import</span> <span class="nn">azam_itl.console</span>
 <span class="n">instrument</span> <span class="o">=</span> <span class="n">azcam</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">tools</span><span class="p">[</span><span class="s2">&quot;instrument&quot;</span><span class="p">]</span>
@@ -591,23 +544,14 @@
 </code></pre></div></p>
 <h1 id="tools">Tools</h1>
 <p>There are many supported tools within azcam. See [Tools] for detailed information.</p>
-<h1 id="azcam-web-tools-azcamtoolswebtools">AzCam Web Tools - <code>azcam.tools.webtools</code></h1>
-<p>These tools implements various browser-based tools which connect to an azcam web server.</p>
-<h3 id="usage">Usage</h3>
-<p>Open a web browser to http://localhost:2403/XXX where XXX is a toolname, with the appropriate replacements for localhost and the web server port number.</p>
-<h3 id="browser-tools">Browser Tools</h3>
-<ul>
-<li>status - display current exposure status</li>
-<li>exptool - a simple exposure control tool</li>
-</ul>
-<h2 id="azcam-environments">AzCam Environments</h2>
+<h1 id="azcam-environments">AzCam Environments</h1>
 <p>Some packages act as <em>environments</em> to define code and data files used for specific hardware systems. Examples include:</p>
 <ul>
 <li><a href="https://github.com/mplesser/azcam-bok">azcam-90prime</a> for the UArizona Bok telescope 90prime instrument</li>
 <li><a href="https://github.com/mplesser/azcam-mont4k">azcam-mont4k</a> for the UArizona Mont4k instrument</li>
 <li><a href="https://github.com/mplesser/azcam-vattspec">azcam-vattspec</a> for the VATT VattSpec camera</li>
 </ul>
-<h2 id="azcam-applications">AzCam Applications</h2>
+<h1 id="azcam-applications">AzCam Applications</h1>
 <p>AzCam <em>applications</em> are stand-alone programs which utilize AzCam functionality. The most important application is <em>azcamserver</em> which defines the tools for a hardware system. Most but not all applications are clients which connect to an <em>azcamserver</em> application. These clients cab be written in any languages.  Some are experimental or still in development. Examples include:</p>
 <ul>
 <li><a href="https://github.com/mplesser/azcam-expstatus">azcam-expstatus</a>: a small GUI which displays exposure progress </li>
@@ -619,12 +563,12 @@
 </ul>
 </li>
 </ul>
-<h2 id="help">Help</h2>
+<h1 id="help">Help</h1>
 <p>AzCam is commonly used with IPython.  Help is then available by typing <code>?xxx</code>, <code>xxx?</code>, <code>xxx??</code> or <code>help(xxx)</code> where <code>xxx</code> is an AzCam class, command, or object instance.</p>
 <p>Useful links include:
 * IPython <a href="https://ipython.org">https://ipython.org</a>
 * Python programming language <a href="https://www.python.org">https://www.python.org</a></p>
-<h2 id="command-structure">Command Structure</h2>
+<h1 id="command-structure">Command Structure</h1>
 <p>The AzCam command structure provides a fairly uniform interface which can be used from the local command line (CLI), a remote socket connection, or the web interface.  An example for taking a 2.5 second <em>flat field</em> exposure is:</p>
 <p>Local CLI or script example:</p>
 <div class="highlight"><pre><span></span><code><span class="n">exposure</span><span class="o">.</span><span class="n">expose</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="s1">&#39;flat&#39;</span><span class="p">,</span> <span class="s1">&#39;an image title&#39;</span><span class="p">)</span>
