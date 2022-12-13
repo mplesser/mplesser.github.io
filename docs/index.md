@@ -1,7 +1,7 @@
 # Documentation Site
 
 ## Software Documentation
-  - [AzCam documentation](https://mplesser.github.io/azcam/)
+  - [AzCam](https://mplesser.github.io/azcam/)
   - [GitHub repos](https://github.com/mplesser)
 
 ## ITL Related Links
