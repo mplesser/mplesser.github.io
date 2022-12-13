@@ -1,4 +1,4 @@
-# Documentation Site
+# Home
 
 ## Software Documentation
   - [AzCam](https://mplesser.github.io/azcam/)
