@@ -4,9 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
-<title>azcam.tools.arc.console_arc API documentation</title>
-<meta name="description" content="Client console commands for ARC controller.
-These methods are added to the controller tool." />
+<title>azcam.utils API documentation</title>
+<meta name="description" content="*azcam_console.utils* contains general purpose support commands used throughout azcam_console." />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -20,11 +19,10 @@ These methods are added to the controller tool." />
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>azcam.tools.arc.console_arc</code></h1>
+<h1 class="title">Module <code>azcam.utils</code></h1>
 </header>
 <section id="section-intro">
-<p>Client console commands for ARC controller.
-These methods are added to the controller tool.</p>
+<p><em>azcam_console.utils</em> contains general purpose support commands used throughout azcam_console.</p>
 </section>
 <section>
 </section>
@@ -33,89 +31,136 @@ These methods are added to the controller tool.</p>
 <section>
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
-<dt id="azcam.tools.arc.console_arc.board_command"><code class="name flex">
-<span>def <span class="ident">board_command</span></span>(<span>self, command, board_number, arg1=-1, arg2=-1, arg3=-1, arg4=-1)</span>
+<dt id="azcam.utils.add_searchfolder"><code class="name flex">
+<span>def <span class="ident">add_searchfolder</span></span>(<span>search_folder: str = '', include_subfolders: bool = True) ‑> None</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Send a specific command to an ARC controller board.
-The reply from the board is often 'DON' but could be data.</p>
+<div class="desc"><p>Appends search_folder (and by default all its subfolders) to the current python search path.
+Default is current folder and its subfolders.
+Subfolders beginning with "_" are not included.</p>
 <h2 id="args">Args</h2>
 <dl>
-<dt><strong><code>command</code></strong></dt>
-<dd>board command to send</dd>
-<dt><strong><code>board_number</code></strong></dt>
-<dd>controller board number</dd>
-<dt><strong><code>argN</code></strong></dt>
-<dd>arguments for command</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>reply</code></dt>
-<dd>reply from controller</dd>
+<dt><strong><code>search_folder</code></strong></dt>
+<dd>Name of folder to add to sys.path</dd>
+<dt><strong><code>include_subfolders</code></strong></dt>
+<dd>True to include all subfolders in sys.path</dd>
 </dl></div>
 </dd>
-<dt id="azcam.tools.arc.console_arc.read_controller_memory"><code class="name flex">
-<span>def <span class="ident">read_controller_memory</span></span>(<span>self, mem_type: str, board_number: int, address: int)</span>
+<dt id="azcam.utils.check_keyboard"><code class="name flex">
+<span>def <span class="ident">check_keyboard</span></span>(<span>wait: bool = False) ‑> str</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Read from DSP memory.</p>
+<div class="desc"><p>Checks keyboard for a key press.
+For Windows OS only.</p>
 <h2 id="args">Args</h2>
 <dl>
-<dt><strong><code>mem_type</code></strong></dt>
-<dd>P, X, Y, or R memory space</dd>
-<dt><strong><code>board_number</code></strong></dt>
-<dd>controller board number</dd>
-<dt><strong><code>address</code></strong></dt>
-<dd>memory address to read</dd>
+<dt><strong><code>wait</code></strong></dt>
+<dd>True to wait until a key is pressed</dd>
 </dl>
 <h2 id="returns">Returns</h2>
-<p>Value of memory</p></div>
+<p>key which was pressed or empty string.</p></div>
 </dd>
-<dt id="azcam.tools.arc.console_arc.set_bias_number"><code class="name flex">
-<span>def <span class="ident">set_bias_number</span></span>(<span>self, board_number: int, dac_number: int, board_type: str, dac_value: int)</span>
+<dt id="azcam.utils.curdir"><code class="name flex">
+<span>def <span class="ident">curdir</span></span>(<span>folder: str = '') ‑> str</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Sets a bias value.</p>
+<div class="desc"><p>Gets and sets the working folder.
+If folder is not specified then just return the current working folder.</p>
 <h2 id="args">Args</h2>
 <dl>
-<dt><strong><code>board_number</code></strong></dt>
-<dd>controller board number</dd>
-<dt><strong><code>dac_number</code></strong></dt>
-<dd>DAC number</dd>
-<dt><strong><code>board_type</code></strong></dt>
-<dd>'VID' or 'CLK'</dd>
-<dt><strong><code>dac_value</code></strong></dt>
-<dd>DAC value for voltage</dd>
-</dl></div>
+<dt><strong><code>folder</code></strong></dt>
+<dd>name of folder set.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>the current folder (after changing).</p></div>
 </dd>
-<dt id="azcam.tools.arc.console_arc.start_idle"><code class="name flex">
-<span>def <span class="ident">start_idle</span></span>(<span>self)</span>
+<dt id="azcam.utils.fix_path"><code class="name flex">
+<span>def <span class="ident">fix_path</span></span>(<span>path: str = '', no_drive_letter: bool = True) ‑> str</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Start idle clocking.</p></div>
-</dd>
-<dt id="azcam.tools.arc.console_arc.stop_idle"><code class="name flex">
-<span>def <span class="ident">stop_idle</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Stop idle clocking.</p></div>
-</dd>
-<dt id="azcam.tools.arc.console_arc.write_controller_memory"><code class="name flex">
-<span>def <span class="ident">write_controller_memory</span></span>(<span>self, mem_type: str, board_number: int, address: int, value: int)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Write a word to a DSP memory location.</p>
+<div class="desc"><p>Makes a nice absolute path, leaving only forward slashes.</p>
 <h2 id="args">Args</h2>
 <dl>
-<dt><strong><code>mem_type</code></strong></dt>
-<dd>P, X, Y, or R memory space</dd>
-<dt><strong><code>board_number</code></strong></dt>
-<dd>controller board number</dd>
-<dt><strong><code>address</code></strong></dt>
-<dd>memory address to write</dd>
+<dt><strong><code>path</code></strong></dt>
+<dd>name of path to cleanup.</dd>
+</dl>
+<p>bool no_drive_letter: Removes leading drive letter.</p>
+<h2 id="returns">Returns</h2>
+<p>cleaned path name.</p></div>
+</dd>
+<dt id="azcam.utils.get_datatype"><code class="name flex">
+<span>def <span class="ident">get_datatype</span></span>(<span>value) ‑> list</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Determine the data type for an object and set the type if possible. A string such as "1.23"
+will result in a type "float" and "2" will result in type "int".</p>
+<h2 id="args">Args</h2>
+<dl>
 <dt><strong><code>value</code></strong></dt>
-<dd>data to write</dd>
-</dl></div>
+<dd>object to be typed</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>list [type, value] of data type as a code and object with that type</p></div>
+</dd>
+<dt id="azcam.utils.make_image_filename"><code class="name flex">
+<span>def <span class="ident">make_image_filename</span></span>(<span>imagefile: str) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the absolute file imagefile, with forward slashes.
+Appends ".fits" if no extension is included.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>imagefile</code></strong></dt>
+<dd>image filename to be expanded</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>expanded image filename.</p></div>
+</dd>
+<dt id="azcam.utils.parse"><code class="name flex">
+<span>def <span class="ident">parse</span></span>(<span>string: str, set_type=0) ‑> List[str]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Parse a string into tokens using the standard azcam rules.
+If setType is true, try and set data data type for each token.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>string</code></strong></dt>
+<dd>String to be parsed into tokens</dd>
+<dt><strong><code>set_type</code></strong></dt>
+<dd>True to try and set the type of each token ("1" to 1)</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>list of parsed tokens</p></div>
+</dd>
+<dt id="azcam.utils.prompt"><code class="name flex">
+<span>def <span class="ident">prompt</span></span>(<span>prompt_message: str = 'Enter a string', default: str = '') ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Prints a message and waits for user input.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>prompt_message</code></strong></dt>
+<dd>string to be printed</dd>
+<dt><strong><code>default</code></strong></dt>
+<dd>string to be returned if no value is entered</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>string entered or default value</p></div>
+</dd>
+<dt id="azcam.utils.show_menu"><code class="name flex">
+<span>def <span class="ident">show_menu</span></span>(<span>configs: dict) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Interative: Show a menu and wait for selection.
+"blank" may be used to display an empty line.
+print() is allowed here as this is for interactive use only.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>configs</code></strong></dt>
+<dd>Dictionary of strings which are menu items</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>string associated with item selected or empty string.</p></div>
 </dd>
 </dl>
 </section>
@@ -130,17 +175,20 @@ The reply from the board is often 'DON' but could be data.</p>
 <ul id="index">
 <li><h3>Super-module</h3>
 <ul>
-<li><code><a title="azcam.tools.arc" href="index.html">azcam.tools.arc</a></code></li>
+<li><code><a title="azcam" href="index.html">azcam</a></code></li>
 </ul>
 </li>
 <li><h3><a href="#header-functions">Functions</a></h3>
-<ul class="">
-<li><code><a title="azcam.tools.arc.console_arc.board_command" href="#azcam.tools.arc.console_arc.board_command">board_command</a></code></li>
-<li><code><a title="azcam.tools.arc.console_arc.read_controller_memory" href="#azcam.tools.arc.console_arc.read_controller_memory">read_controller_memory</a></code></li>
-<li><code><a title="azcam.tools.arc.console_arc.set_bias_number" href="#azcam.tools.arc.console_arc.set_bias_number">set_bias_number</a></code></li>
-<li><code><a title="azcam.tools.arc.console_arc.start_idle" href="#azcam.tools.arc.console_arc.start_idle">start_idle</a></code></li>
-<li><code><a title="azcam.tools.arc.console_arc.stop_idle" href="#azcam.tools.arc.console_arc.stop_idle">stop_idle</a></code></li>
-<li><code><a title="azcam.tools.arc.console_arc.write_controller_memory" href="#azcam.tools.arc.console_arc.write_controller_memory">write_controller_memory</a></code></li>
+<ul class="two-column">
+<li><code><a title="azcam.utils.add_searchfolder" href="#azcam.utils.add_searchfolder">add_searchfolder</a></code></li>
+<li><code><a title="azcam.utils.check_keyboard" href="#azcam.utils.check_keyboard">check_keyboard</a></code></li>
+<li><code><a title="azcam.utils.curdir" href="#azcam.utils.curdir">curdir</a></code></li>
+<li><code><a title="azcam.utils.fix_path" href="#azcam.utils.fix_path">fix_path</a></code></li>
+<li><code><a title="azcam.utils.get_datatype" href="#azcam.utils.get_datatype">get_datatype</a></code></li>
+<li><code><a title="azcam.utils.make_image_filename" href="#azcam.utils.make_image_filename">make_image_filename</a></code></li>
+<li><code><a title="azcam.utils.parse" href="#azcam.utils.parse">parse</a></code></li>
+<li><code><a title="azcam.utils.prompt" href="#azcam.utils.prompt">prompt</a></code></li>
+<li><code><a title="azcam.utils.show_menu" href="#azcam.utils.show_menu">show_menu</a></code></li>
 </ul>
 </li>
 </ul>

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
 <title>azcam.parameters API documentation</title>
-<meta name="description" content="Parameter handling tool for azcam." />
+<meta name="description" content="Parameter handling tool for azcam …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -23,6 +23,7 @@
 </header>
 <section id="section-intro">
 <p>Parameter handling tool for azcam.</p>
+<p>There is one main paramater dictionary with multiple subdicts. A default subdict can be specified.</p>
 </section>
 <section>
 </section>
@@ -98,31 +99,20 @@
 <h3>Methods</h3>
 <dl>
 <dt id="azcam.parameters.Parameters.get_par"><code class="name flex">
-<span>def <span class="ident">get_par</span></span>(<span>self, parameter: str) ‑> Any</span>
+<span>def <span class="ident">get_par</span></span>(<span>self, parameter: str, subdict=None) ‑> Any</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Return the value of a parameter in the parameters dictionary.</p>
+<div class="desc"><p>Return the current value of a parameter in the parameters dictionary.
+If subdict is not specified then the default subdict is used.</p>
 <h2 id="args">Args</h2>
 <dl>
 <dt><strong><code>parameter</code></strong> :&ensp;<code>str</code></dt>
 <dd>name of the parameter</dd>
+<dt><strong><code>subdict</code></strong> :&ensp;<code>str</code></dt>
+<dd>name of the subdict containing the parameter</dd>
 </dl>
 <h2 id="returns">Returns</h2>
 <p>value (Any): value of the parameter</p></div>
-</dd>
-<dt id="azcam.parameters.Parameters.get_script_par"><code class="name flex">
-<span>def <span class="ident">get_script_par</span></span>(<span>self, par_dict_id: Dict, attribute: Any, value: Any = 'default', prompt_string: str = '', default: Any = None) ‑> Any</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Return a parameter from the par_dict database, or prompt as needed.
-The new value is saved in the database.</p>
-<p>:param str par_dict_id: Parameter dictionary name of in parameters.par_dict
-:param str attribute: Name of attribute, used as dictionary key
-:param str value: "default" or "prompt" or a value
-:param str prompt: Prompt message
-:param str default: Default value to be used
-:return str:
-parameter</p></div>
 </dd>
 <dt id="azcam.parameters.Parameters.initialize"><code class="name flex">
 <span>def <span class="ident">initialize</span></span>(<span>self) ‑> None</span>
@@ -155,14 +145,37 @@ parameter</p></div>
 </p>
 <div class="desc inherited"><p>Reset the tool.</p></div>
 </dd>
+<dt id="azcam.parameters.Parameters.restore_imagepars"><code class="name flex">
+<span>def <span class="ident">restore_imagepars</span></span>(<span>self, imagepars: dict) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Restore image parameters from dictionary.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>imagepars</code></strong></dt>
+<dd>dictionary set with save_imagepars().</dd>
+</dl></div>
+</dd>
+<dt id="azcam.parameters.Parameters.save_imagepars"><code class="name flex">
+<span>def <span class="ident">save_imagepars</span></span>(<span>self, imagepars={}) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Save current image parameters.
+imagepars is a dictionary.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>imagepars</code></strong></dt>
+<dd>dict of azcam.db.imageparnames names to save</dd>
+</dl></div>
+</dd>
 <dt id="azcam.parameters.Parameters.save_pars"><code class="name flex">
 <span>def <span class="ident">save_pars</span></span>(<span>self) ‑> None</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Save the current parameter set.</p></div>
+<div class="desc"><p>Writes the par_dict to the par_file using current values.</p></div>
 </dd>
 <dt id="azcam.parameters.Parameters.set_par"><code class="name flex">
-<span>def <span class="ident">set_par</span></span>(<span>self, parameter: str, value: Any = None) ‑> None</span>
+<span>def <span class="ident">set_par</span></span>(<span>self, parameter: str, value: Any = 'None', subdict=None) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Set the value of a parameter in the parameters dictionary.</p>
@@ -172,34 +185,30 @@ parameter</p></div>
 <dd>name of the parameter</dd>
 <dt><strong><code>value</code></strong> :&ensp;<code>Any</code></dt>
 <dd>value of the parameter. Defaults to None.</dd>
+<dt><strong><code>subdict</code></strong></dt>
+<dd>subdict in which to set paramater</dd>
 </dl>
 <h2 id="returns">Returns</h2>
 <p>None</p></div>
 </dd>
-<dt id="azcam.parameters.Parameters.set_script_par"><code class="name flex">
-<span>def <span class="ident">set_script_par</span></span>(<span>self, par_dict_id, attribute, value) ‑> None</span>
+<dt id="azcam.parameters.Parameters.update_par_dict"><code class="name flex">
+<span>def <span class="ident">update_par_dict</span></span>(<span>self, par_dictname: str = None) ‑> None</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Set a parameter from the par_dict database.</p>
-<p>:param str par_dict_id: Parameter dictionary
-:param str attribute: Name of attribute, used as dictionary key
-:param str value: "default" or "prompt" or a value
-:return:
-None</p></div>
+<div class="desc"><p>Set par_dict values from current attributes.</p></div>
 </dd>
 <dt id="azcam.parameters.Parameters.update_pars"><code class="name flex">
-<span>def <span class="ident">update_pars</span></span>(<span>self, write, par_dictname: str = None) ‑> None</span>
+<span>def <span class="ident">update_pars</span></span>(<span>self, par_dictname: str = None) ‑> None</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Update azcam parameters to/from a config dictionary.
-write True =&gt; write values into dictionary.
-write False =&gt; set values from dictionary.</p></div>
+<div class="desc"><p>Set current attributes from par_dict values.</p></div>
 </dd>
 <dt id="azcam.parameters.Parameters.write_parfile"><code class="name flex">
 <span>def <span class="ident">write_parfile</span></span>(<span>self, parfilename: str = None) ‑> None</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Update a parameter file with current values.</p>
+<div class="desc"><p>Writes par_dict to the par file.
+Does nto update any values.</p>
 <h2 id="args">Args</h2>
 <dl>
 <dt><strong><code>parfilename</code></strong> :&ensp;<code>str</code>, optional</dt>
@@ -236,16 +245,17 @@ None indicates use self.par_file</dd>
 <li><code><a title="azcam.parameters.Parameters.description" href="tools.html#azcam.parameters.Parameters.description">description</a></code></li>
 <li><code><a title="azcam.parameters.Parameters.enabled" href="tools.html#azcam.parameters.Parameters.enabled">enabled</a></code></li>
 <li><code><a title="azcam.parameters.Parameters.get_par" href="#azcam.parameters.Parameters.get_par">get_par</a></code></li>
-<li><code><a title="azcam.parameters.Parameters.get_script_par" href="#azcam.parameters.Parameters.get_script_par">get_script_par</a></code></li>
 <li><code><a title="azcam.parameters.Parameters.initialize" href="tools.html#azcam.parameters.Parameters.initialize">initialize</a></code></li>
 <li><code><a title="azcam.parameters.Parameters.initialized" href="tools.html#azcam.parameters.Parameters.initialized">initialized</a></code></li>
 <li><code><a title="azcam.parameters.Parameters.is_reset" href="tools.html#azcam.parameters.Parameters.is_reset">is_reset</a></code></li>
 <li><code><a title="azcam.parameters.Parameters.read_parfile" href="#azcam.parameters.Parameters.read_parfile">read_parfile</a></code></li>
 <li><code><a title="azcam.parameters.Parameters.reset" href="tools.html#azcam.parameters.Parameters.reset">reset</a></code></li>
+<li><code><a title="azcam.parameters.Parameters.restore_imagepars" href="#azcam.parameters.Parameters.restore_imagepars">restore_imagepars</a></code></li>
+<li><code><a title="azcam.parameters.Parameters.save_imagepars" href="#azcam.parameters.Parameters.save_imagepars">save_imagepars</a></code></li>
 <li><code><a title="azcam.parameters.Parameters.save_pars" href="#azcam.parameters.Parameters.save_pars">save_pars</a></code></li>
 <li><code><a title="azcam.parameters.Parameters.set_par" href="#azcam.parameters.Parameters.set_par">set_par</a></code></li>
-<li><code><a title="azcam.parameters.Parameters.set_script_par" href="#azcam.parameters.Parameters.set_script_par">set_script_par</a></code></li>
 <li><code><a title="azcam.parameters.Parameters.tool_id" href="tools.html#azcam.parameters.Parameters.tool_id">tool_id</a></code></li>
+<li><code><a title="azcam.parameters.Parameters.update_par_dict" href="#azcam.parameters.Parameters.update_par_dict">update_par_dict</a></code></li>
 <li><code><a title="azcam.parameters.Parameters.update_pars" href="#azcam.parameters.Parameters.update_pars">update_pars</a></code></li>
 <li><code><a title="azcam.parameters.Parameters.verbosity" href="tools.html#azcam.parameters.Parameters.verbosity">verbosity</a></code></li>
 <li><code><a title="azcam.parameters.Parameters.write_parfile" href="#azcam.parameters.Parameters.write_parfile">write_parfile</a></code></li>

@@ -99,7 +99,7 @@ Create instance.</p>
 <h2 id="returns">Returns</h2>
 <dl>
 <dt><code>list</code> of <code>header lines</code></dt>
-<dd>[Header[]]: Each element Header[i] contains the sublist (keyword, value, comment, and type).</dd>
+<dd>[Header[]]: Each element contains (keyword,value,comment,type).</dd>
 </dl></div>
 </dd>
 <dt id="azcam.header.Header.get_keyword"><code class="name flex">
@@ -253,7 +253,7 @@ Comment always returned in double quotes, even if empty.</p>
 <h2 id="returns">Returns</h2>
 <dl>
 <dt><code>list</code> of <code>header lines</code></dt>
-<dd>[Header[]]: Each element Header[i] contains the sublist (keyword, value, comment, and type).</dd>
+<dd>[Header[]]: Each element contains (keyword,value,comment,type).</dd>
 <dt><code>Example</code></dt>
 <dd>Header[2][1] is the value of keyword 2 and Header[2][3] is its type.</dd>
 </dl></div>
@@ -365,7 +365,9 @@ Comment always returned in double quotes, even if empty.</p>
 <h2 id="returns">Returns</h2>
 <dl>
 <dt><code>list</code> of <code>header lines</code></dt>
-<dd>[Header[]]: Each element Header[i] contains the sublist (keyword, value, …</dd>
+<dd>[Header[]]: Each element contains (keyword,value,comment,type).</dd>
+<dt><code>Example</code></dt>
+<dd>…</dd>
 </dl></div>
 </dd>
 <dt id="azcam.header.System.set_keyword"><code class="name flex">

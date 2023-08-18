@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
-<title>azcam.functions.fits API documentation</title>
+<title>azcam.fits API documentation</title>
 <meta name="description" content="*azcam.fits* contains FITS image support functions for azcam." />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
@@ -19,7 +19,7 @@
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>azcam.functions.fits</code></h1>
+<h1 class="title">Module <code>azcam.fits</code></h1>
 </header>
 <section id="section-intro">
 <p><em>azcam.fits</em> contains FITS image support functions for azcam.</p>
@@ -31,7 +31,7 @@
 <section>
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
-<dt id="azcam.functions.fits.add"><code class="name flex">
+<dt id="azcam.fits.add"><code class="name flex">
 <span>def <span class="ident">add</span></span>(<span>filename1: str, filename2: str, filename3: str, datatype: str = 'uint16') ‑> None</span>
 </code></dt>
 <dd>
@@ -45,12 +45,12 @@
 <dd>may be an image filename or a constant.</dd>
 <dt><strong><code>filename3</code></strong></dt>
 <dd>optional, must be an image filename.
-If not specified, result goes into filename1.</dd>
+If not specified, result to filename1.</dd>
 <dt><strong><code>datatype</code></strong></dt>
 <dd>valid datatype string for resultant data type.</dd>
 </dl></div>
 </dd>
-<dt id="azcam.functions.fits.add_history"><code class="name flex">
+<dt id="azcam.fits.add_history"><code class="name flex">
 <span>def <span class="ident">add_history</span></span>(<span>filename: str, history_string: str, extension: int = 0) ‑> None</span>
 </code></dt>
 <dd>
@@ -68,7 +68,7 @@ if it is too long to fit in one. Any extra text is truncated.</p>
 <dd>image extension number.</dd>
 </dl></div>
 </dd>
-<dt id="azcam.functions.fits.arith"><code class="name flex">
+<dt id="azcam.fits.arith"><code class="name flex">
 <span>def <span class="ident">arith</span></span>(<span>filename1: str, operator: str, filename2: str, filename3: str = '', datatype: str = 'uint16') ‑> None</span>
 </code></dt>
 <dd>
@@ -83,12 +83,12 @@ if it is too long to fit in one. Any extra text is truncated.</p>
 <dd>may be an image filename or a constant.</dd>
 <dt><strong><code>filename3</code></strong></dt>
 <dd>optional, must be an image filename.
-If not specified, result goes into filename1.</dd>
+If not specified, result to filename1.</dd>
 <dt><strong><code>datatype</code></strong></dt>
 <dd>valid datatype string for resultant data type.</dd>
 </dl></div>
 </dd>
-<dt id="azcam.functions.fits.colbias"><code class="name flex">
+<dt id="azcam.fits.colbias"><code class="name flex">
 <span>def <span class="ident">colbias</span></span>(<span>filename: str = 'test', fit_order: int = 3, margin_cols: int = 0) ‑> None</span>
 </code></dt>
 <dd>
@@ -103,7 +103,7 @@ If not specified, result goes into filename1.</dd>
 <dd>number of overscan columns to skip before correction.</dd>
 </dl></div>
 </dd>
-<dt id="azcam.functions.fits.combine"><code class="name flex">
+<dt id="azcam.fits.combine"><code class="name flex">
 <span>def <span class="ident">combine</span></span>(<span>file_list: list = [], out_filename: str = 'combined.fits', combination_type: str = 'median', overscan_correct: int = 1, fit_order=3, datatype='float32') ‑> None</span>
 </code></dt>
 <dd>
@@ -120,7 +120,7 @@ If not specified, result goes into filename1.</dd>
 <dd>line fit order if &gt;0 for overscan correction before combination.</dd>
 </dl></div>
 </dd>
-<dt id="azcam.functions.fits.div"><code class="name flex">
+<dt id="azcam.fits.div"><code class="name flex">
 <span>def <span class="ident">div</span></span>(<span>filename1: str, filename2: str, filename3: str, datatype: str = 'uint16') ‑> None</span>
 </code></dt>
 <dd>
@@ -136,12 +136,12 @@ If not specified, result goes into filename1.</dd>
 <dd>may be an image filename or a constant.</dd>
 <dt><strong><code>filename3</code></strong></dt>
 <dd>optional, must be an image filename.
-If not specified, result goes into filename1.</dd>
+If not specified, result to filename1.</dd>
 <dt><strong><code>datatype</code></strong></dt>
 <dd>valid datatype string for resultant data type.</dd>
 </dl></div>
 </dd>
-<dt id="azcam.functions.fits.edit_keyword"><code class="name flex">
+<dt id="azcam.fits.edit_keyword"><code class="name flex">
 <span>def <span class="ident">edit_keyword</span></span>(<span>filename: str, keyword: str, value: Any, extension: int = 0) ‑> None</span>
 </code></dt>
 <dd>
@@ -158,7 +158,7 @@ If not specified, result goes into filename1.</dd>
 <dd>image extension number.</dd>
 </dl></div>
 </dd>
-<dt id="azcam.functions.fits.file_exists"><code class="name flex">
+<dt id="azcam.fits.file_exists"><code class="name flex">
 <span>def <span class="ident">file_exists</span></span>(<span>filename: str) ‑> bool</span>
 </code></dt>
 <dd>
@@ -170,7 +170,7 @@ If not specified, result goes into filename1.</dd>
 <h2 id="returns">Returns</h2>
 <p>True if the file exists.</p></div>
 </dd>
-<dt id="azcam.functions.fits.get_data"><code class="name flex">
+<dt id="azcam.fits.get_data"><code class="name flex">
 <span>def <span class="ident">get_data</span></span>(<span>filename: str = 'test', roi: str = []) ‑> list</span>
 </code></dt>
 <dd>
@@ -186,7 +186,7 @@ NOT FINISHED!</p>
 <h2 id="returns">Returns</h2>
 <p>list of pixel values.</p></div>
 </dd>
-<dt id="azcam.functions.fits.get_extensions"><code class="name flex">
+<dt id="azcam.fits.get_extensions"><code class="name flex">
 <span>def <span class="ident">get_extensions</span></span>(<span>filename: str) ‑> list</span>
 </code></dt>
 <dd>
@@ -202,7 +202,7 @@ The first data extension for an MEF file is 1.</p>
 <p>the list <code>[number_exts, first_ext, last_ext]</code> containing the number of extensions and the
 indices for the python <code>range</code> function to iterate over them.</p></div>
 </dd>
-<dt id="azcam.functions.fits.get_header"><code class="name flex">
+<dt id="azcam.fits.get_header"><code class="name flex">
 <span>def <span class="ident">get_header</span></span>(<span>filename: str, extension: int = 0) ‑> object</span>
 </code></dt>
 <dd>
@@ -217,7 +217,7 @@ indices for the python <code>range</code> function to iterate over them.</p></di
 <h2 id="returns">Returns</h2>
 <p>the image header as a pyfits header object.</p></div>
 </dd>
-<dt id="azcam.functions.fits.get_history"><code class="name flex">
+<dt id="azcam.fits.get_history"><code class="name flex">
 <span>def <span class="ident">get_history</span></span>(<span>filename: str, extension: int = 0) ‑> str</span>
 </code></dt>
 <dd>
@@ -232,7 +232,7 @@ indices for the python <code>range</code> function to iterate over them.</p></di
 <h2 id="returns">Returns</h2>
 <p>string containing all HISTORY lines.</p></div>
 </dd>
-<dt id="azcam.functions.fits.get_keyword"><code class="name flex">
+<dt id="azcam.fits.get_keyword"><code class="name flex">
 <span>def <span class="ident">get_keyword</span></span>(<span>filename: str, keyword: str, extension: int = 0) ‑> Any</span>
 </code></dt>
 <dd>
@@ -249,7 +249,7 @@ indices for the python <code>range</code> function to iterate over them.</p></di
 <h2 id="returns">Returns</h2>
 <p>the specified keyword value.</p></div>
 </dd>
-<dt id="azcam.functions.fits.get_section"><code class="name flex">
+<dt id="azcam.fits.get_section"><code class="name flex">
 <span>def <span class="ident">get_section</span></span>(<span>filename: str, section: str, extension: int = 0) ‑> list</span>
 </code></dt>
 <dd>
@@ -267,7 +267,7 @@ indices for the python <code>range</code> function to iterate over them.</p></di
 <p>list of zero-based pixel numbers defining the
 section as <code>[first_col,last_col,first_row,last_row]</code>.</p></div>
 </dd>
-<dt id="azcam.functions.fits.maximum"><code class="name flex">
+<dt id="azcam.fits.maximum"><code class="name flex">
 <span>def <span class="ident">maximum</span></span>(<span>filename: str = 'test', roi: str = []) ‑> list</span>
 </code></dt>
 <dd>
@@ -282,7 +282,7 @@ section as <code>[first_col,last_col,first_row,last_row]</code>.</p></div>
 <h2 id="returns">Returns</h2>
 <p>list of the maxima of each image extension or ROI in each extension.</p></div>
 </dd>
-<dt id="azcam.functions.fits.mean"><code class="name flex">
+<dt id="azcam.fits.mean"><code class="name flex">
 <span>def <span class="ident">mean</span></span>(<span>filename: str = 'test', roi: list = []) ‑> list</span>
 </code></dt>
 <dd>
@@ -297,7 +297,7 @@ section as <code>[first_col,last_col,first_row,last_row]</code>.</p></div>
 <h2 id="returns">Returns</h2>
 <p>list of the means of each image extension or ROI in each extension.</p></div>
 </dd>
-<dt id="azcam.functions.fits.minimum"><code class="name flex">
+<dt id="azcam.fits.minimum"><code class="name flex">
 <span>def <span class="ident">minimum</span></span>(<span>filename: str = 'test', roi: str = []) ‑> list</span>
 </code></dt>
 <dd>
@@ -312,7 +312,7 @@ section as <code>[first_col,last_col,first_row,last_row]</code>.</p></div>
 <h2 id="returns">Returns</h2>
 <p>list of the minima of each image extension or ROI in each extension.</p></div>
 </dd>
-<dt id="azcam.functions.fits.mult"><code class="name flex">
+<dt id="azcam.fits.mult"><code class="name flex">
 <span>def <span class="ident">mult</span></span>(<span>filename1: str, filename2: str, filename3: str, datatype: str = 'uint16') ‑> None</span>
 </code></dt>
 <dd>
@@ -328,12 +328,12 @@ section as <code>[first_col,last_col,first_row,last_row]</code>.</p></div>
 <dd>may be an image filename or a constant.</dd>
 <dt><strong><code>filename3</code></strong></dt>
 <dd>optional, must be an image filename.
-If not specified, result goes into filename1.</dd>
+If not specified, result to filename1.</dd>
 <dt><strong><code>datatype</code></strong></dt>
 <dd>valid datatype string for resultant data type.</dd>
 </dl></div>
 </dd>
-<dt id="azcam.functions.fits.resample"><code class="name flex">
+<dt id="azcam.fits.resample"><code class="name flex">
 <span>def <span class="ident">resample</span></span>(<span>filename: str, resample: int = 2) ‑> None</span>
 </code></dt>
 <dd>
@@ -346,7 +346,7 @@ If not specified, result goes into filename1.</dd>
 <dd>number of pixels to combine in each dimension.</dd>
 </dl></div>
 </dd>
-<dt id="azcam.functions.fits.sdev"><code class="name flex">
+<dt id="azcam.fits.sdev"><code class="name flex">
 <span>def <span class="ident">sdev</span></span>(<span>filename: str = 'test', roi: list = []) ‑> list</span>
 </code></dt>
 <dd>
@@ -361,7 +361,7 @@ If not specified, result goes into filename1.</dd>
 <h2 id="returns">Returns</h2>
 <p>list of the standard deviations of each image extension or ROI in each extension.</p></div>
 </dd>
-<dt id="azcam.functions.fits.stat"><code class="name flex">
+<dt id="azcam.fits.stat"><code class="name flex">
 <span>def <span class="ident">stat</span></span>(<span>filename: str = 'test', roi: list = []) ‑> list</span>
 </code></dt>
 <dd>
@@ -374,9 +374,9 @@ If not specified, result goes into filename1.</dd>
 <dd>Region-Of-Interest.</dd>
 </dl>
 <h2 id="returns">Returns</h2>
-<p>list of <code>[[means], [sdevs], ROI]</code> the status of each image extension or ROI in each extension.</p></div>
+<p>list of <code>[[means], [sdevs], ROI]</code> for each image extension or ROI in each extension.</p></div>
 </dd>
-<dt id="azcam.functions.fits.sub"><code class="name flex">
+<dt id="azcam.fits.sub"><code class="name flex">
 <span>def <span class="ident">sub</span></span>(<span>filename1: str, filename2: str, filename3: str, datatype: str = 'uint16') ‑> None</span>
 </code></dt>
 <dd>
@@ -392,7 +392,7 @@ If not specified, result goes into filename1.</dd>
 <dd>may be an image filename or a constant.</dd>
 <dt><strong><code>filename3</code></strong></dt>
 <dd>optional, must be an image filename.
-If not specified, result goes into filename1.</dd>
+If not specified, result to filename1.</dd>
 <dt><strong><code>datatype</code></strong></dt>
 <dd>valid datatype string for resultant data type.</dd>
 </dl></div>
@@ -410,33 +410,33 @@ If not specified, result goes into filename1.</dd>
 <ul id="index">
 <li><h3>Super-module</h3>
 <ul>
-<li><code><a title="azcam.functions" href="index.html">azcam.functions</a></code></li>
+<li><code><a title="azcam" href="index.html">azcam</a></code></li>
 </ul>
 </li>
 <li><h3><a href="#header-functions">Functions</a></h3>
 <ul class="two-column">
-<li><code><a title="azcam.functions.fits.add" href="#azcam.functions.fits.add">add</a></code></li>
-<li><code><a title="azcam.functions.fits.add_history" href="#azcam.functions.fits.add_history">add_history</a></code></li>
-<li><code><a title="azcam.functions.fits.arith" href="#azcam.functions.fits.arith">arith</a></code></li>
-<li><code><a title="azcam.functions.fits.colbias" href="#azcam.functions.fits.colbias">colbias</a></code></li>
-<li><code><a title="azcam.functions.fits.combine" href="#azcam.functions.fits.combine">combine</a></code></li>
-<li><code><a title="azcam.functions.fits.div" href="#azcam.functions.fits.div">div</a></code></li>
-<li><code><a title="azcam.functions.fits.edit_keyword" href="#azcam.functions.fits.edit_keyword">edit_keyword</a></code></li>
-<li><code><a title="azcam.functions.fits.file_exists" href="#azcam.functions.fits.file_exists">file_exists</a></code></li>
-<li><code><a title="azcam.functions.fits.get_data" href="#azcam.functions.fits.get_data">get_data</a></code></li>
-<li><code><a title="azcam.functions.fits.get_extensions" href="#azcam.functions.fits.get_extensions">get_extensions</a></code></li>
-<li><code><a title="azcam.functions.fits.get_header" href="#azcam.functions.fits.get_header">get_header</a></code></li>
-<li><code><a title="azcam.functions.fits.get_history" href="#azcam.functions.fits.get_history">get_history</a></code></li>
-<li><code><a title="azcam.functions.fits.get_keyword" href="#azcam.functions.fits.get_keyword">get_keyword</a></code></li>
-<li><code><a title="azcam.functions.fits.get_section" href="#azcam.functions.fits.get_section">get_section</a></code></li>
-<li><code><a title="azcam.functions.fits.maximum" href="#azcam.functions.fits.maximum">maximum</a></code></li>
-<li><code><a title="azcam.functions.fits.mean" href="#azcam.functions.fits.mean">mean</a></code></li>
-<li><code><a title="azcam.functions.fits.minimum" href="#azcam.functions.fits.minimum">minimum</a></code></li>
-<li><code><a title="azcam.functions.fits.mult" href="#azcam.functions.fits.mult">mult</a></code></li>
-<li><code><a title="azcam.functions.fits.resample" href="#azcam.functions.fits.resample">resample</a></code></li>
-<li><code><a title="azcam.functions.fits.sdev" href="#azcam.functions.fits.sdev">sdev</a></code></li>
-<li><code><a title="azcam.functions.fits.stat" href="#azcam.functions.fits.stat">stat</a></code></li>
-<li><code><a title="azcam.functions.fits.sub" href="#azcam.functions.fits.sub">sub</a></code></li>
+<li><code><a title="azcam.fits.add" href="#azcam.fits.add">add</a></code></li>
+<li><code><a title="azcam.fits.add_history" href="#azcam.fits.add_history">add_history</a></code></li>
+<li><code><a title="azcam.fits.arith" href="#azcam.fits.arith">arith</a></code></li>
+<li><code><a title="azcam.fits.colbias" href="#azcam.fits.colbias">colbias</a></code></li>
+<li><code><a title="azcam.fits.combine" href="#azcam.fits.combine">combine</a></code></li>
+<li><code><a title="azcam.fits.div" href="#azcam.fits.div">div</a></code></li>
+<li><code><a title="azcam.fits.edit_keyword" href="#azcam.fits.edit_keyword">edit_keyword</a></code></li>
+<li><code><a title="azcam.fits.file_exists" href="#azcam.fits.file_exists">file_exists</a></code></li>
+<li><code><a title="azcam.fits.get_data" href="#azcam.fits.get_data">get_data</a></code></li>
+<li><code><a title="azcam.fits.get_extensions" href="#azcam.fits.get_extensions">get_extensions</a></code></li>
+<li><code><a title="azcam.fits.get_header" href="#azcam.fits.get_header">get_header</a></code></li>
+<li><code><a title="azcam.fits.get_history" href="#azcam.fits.get_history">get_history</a></code></li>
+<li><code><a title="azcam.fits.get_keyword" href="#azcam.fits.get_keyword">get_keyword</a></code></li>
+<li><code><a title="azcam.fits.get_section" href="#azcam.fits.get_section">get_section</a></code></li>
+<li><code><a title="azcam.fits.maximum" href="#azcam.fits.maximum">maximum</a></code></li>
+<li><code><a title="azcam.fits.mean" href="#azcam.fits.mean">mean</a></code></li>
+<li><code><a title="azcam.fits.minimum" href="#azcam.fits.minimum">minimum</a></code></li>
+<li><code><a title="azcam.fits.mult" href="#azcam.fits.mult">mult</a></code></li>
+<li><code><a title="azcam.fits.resample" href="#azcam.fits.resample">resample</a></code></li>
+<li><code><a title="azcam.fits.sdev" href="#azcam.fits.sdev">sdev</a></code></li>
+<li><code><a title="azcam.fits.stat" href="#azcam.fits.stat">stat</a></code></li>
+<li><code><a title="azcam.fits.sub" href="#azcam.fits.sub">sub</a></code></li>
 </ul>
 </li>
 </ul>

@@ -76,13 +76,13 @@
 <dd>
 <div class="desc"><p>operating mode (server or console)</p></div>
 </dd>
+<dt id="azcam.database.AzcamDatabase.par_table"><code class="name">var <span class="ident">par_table</span> : dict</code></dt>
+<dd>
+<div class="desc"><p>dict of general parameters</p></div>
+</dd>
 <dt id="azcam.database.AzcamDatabase.parameters"><code class="name">var <span class="ident">parameters</span> : None</code></dt>
 <dd>
 <div class="desc"><p>parameters object</p></div>
-</dd>
-<dt id="azcam.database.AzcamDatabase.pardict"><code class="name">var <span class="ident">pardict</span> : dict</code></dt>
-<dd>
-<div class="desc"><p>dict of general parameters</p></div>
 </dd>
 <dt id="azcam.database.AzcamDatabase.scripts"><code class="name">var <span class="ident">scripts</span> : dict</code></dt>
 <dd>
@@ -139,53 +139,6 @@
 </dd>
 </dl>
 </dd>
-<dt id="azcam.database.Database"><code class="flex name class">
-<span>class <span class="ident">Database</span></span>
-<span>(</span><span>tools: dict = &lt;factory&gt;, wd: str = '')</span>
-</code></dt>
-<dd>
-<div class="desc"><p>AzCam server database dataclass.</p></div>
-<h3>Class variables</h3>
-<dl>
-<dt id="azcam.database.Database.tools"><code class="name">var <span class="ident">tools</span> : dict</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="azcam.database.Database.wd"><code class="name">var <span class="ident">wd</span> : str</code></dt>
-<dd>
-<div class="desc"><p>working folder</p></div>
-</dd>
-</dl>
-<h3>Methods</h3>
-<dl>
-<dt id="azcam.database.Database.get"><code class="name flex">
-<span>def <span class="ident">get</span></span>(<span>self, name: str) ‑> Any</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Returns a database attribute by name.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>name</code></strong></dt>
-<dd>name of attribute to return</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<p>value or None if <em>name</em> is not defined</p></div>
-</dd>
-<dt id="azcam.database.Database.set"><code class="name flex">
-<span>def <span class="ident">set</span></span>(<span>self, name: str, value: Any) ‑> None</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Sets a database attribute value.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>name</code></strong></dt>
-<dd>name of attribute to set</dd>
-<dt><strong><code>value</code></strong></dt>
-<dd>value of attribute to be set</dd>
-</dl></div>
-</dd>
-</dl>
-</dd>
 </dl>
 </section>
 </article>
@@ -215,8 +168,8 @@
 <li><code><a title="azcam.database.AzcamDatabase.imageparnames" href="#azcam.database.AzcamDatabase.imageparnames">imageparnames</a></code></li>
 <li><code><a title="azcam.database.AzcamDatabase.logger" href="#azcam.database.AzcamDatabase.logger">logger</a></code></li>
 <li><code><a title="azcam.database.AzcamDatabase.mode" href="#azcam.database.AzcamDatabase.mode">mode</a></code></li>
+<li><code><a title="azcam.database.AzcamDatabase.par_table" href="#azcam.database.AzcamDatabase.par_table">par_table</a></code></li>
 <li><code><a title="azcam.database.AzcamDatabase.parameters" href="#azcam.database.AzcamDatabase.parameters">parameters</a></code></li>
-<li><code><a title="azcam.database.AzcamDatabase.pardict" href="#azcam.database.AzcamDatabase.pardict">pardict</a></code></li>
 <li><code><a title="azcam.database.AzcamDatabase.scripts" href="#azcam.database.AzcamDatabase.scripts">scripts</a></code></li>
 <li><code><a title="azcam.database.AzcamDatabase.set" href="#azcam.database.AzcamDatabase.set">set</a></code></li>
 <li><code><a title="azcam.database.AzcamDatabase.shortcuts" href="#azcam.database.AzcamDatabase.shortcuts">shortcuts</a></code></li>
@@ -224,15 +177,6 @@
 <li><code><a title="azcam.database.AzcamDatabase.tools" href="#azcam.database.AzcamDatabase.tools">tools</a></code></li>
 <li><code><a title="azcam.database.AzcamDatabase.verbosity" href="#azcam.database.AzcamDatabase.verbosity">verbosity</a></code></li>
 <li><code><a title="azcam.database.AzcamDatabase.wd" href="#azcam.database.AzcamDatabase.wd">wd</a></code></li>
-</ul>
-</li>
-<li>
-<h4><code><a title="azcam.database.Database" href="#azcam.database.Database">Database</a></code></h4>
-<ul class="">
-<li><code><a title="azcam.database.Database.get" href="#azcam.database.Database.get">get</a></code></li>
-<li><code><a title="azcam.database.Database.set" href="#azcam.database.Database.set">set</a></code></li>
-<li><code><a title="azcam.database.Database.tools" href="#azcam.database.Database.tools">tools</a></code></li>
-<li><code><a title="azcam.database.Database.wd" href="#azcam.database.Database.wd">wd</a></code></li>
 </ul>
 </li>
 </ul>
