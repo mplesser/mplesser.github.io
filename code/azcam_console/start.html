@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
 <title>azcam_console.start API documentation</title>
-<meta name="description" content="Startup script for azcam …" />
+<meta name="description" content="Startup script for azcamconsole …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -22,8 +22,8 @@
 <h1 class="title">Module <code>azcam_console.start</code></h1>
 </header>
 <section id="section-intro">
-<p>Startup script for azcam.</p>
-<p>For installations, this is the "azcam" command.</p>
+<p>Startup script for azcamconsole.</p>
+<p>For installations, this is the "azcamconsole" command.</p>
 </section>
 <section>
 </section>
@@ -36,13 +36,13 @@
 <span>def <span class="ident">main</span></span>(<span>)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Method for the azcam command.
+<div class="desc"><p>Method for the azcamconsole command.
 Required argument is a startup script name.
 Local optional arguments are:
 -venv path_to_ve_activation_script
 -python system_python_command (default is "ipython &ndash;profile azcam")</p>
 <p>Usage example:
-azcam azcam_xxx.start -venv ve_activation_path -python python3</p></div>
+azcam azcam_itl.console -venv ve_activation_path -python python3</p></div>
 </dd>
 <dt id="azcam_console.start.start"><code class="name flex">
 <span>def <span class="ident">start</span></span>(<span>)</span>

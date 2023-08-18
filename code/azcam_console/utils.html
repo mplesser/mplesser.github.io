@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
-<title>azcam_server.start API documentation</title>
-<meta name="description" content="Startup script for azcam …" />
+<title>azcam_console.utils API documentation</title>
+<meta name="description" content="*azcam.utils* contains general purpose support commands used throughout azcam." />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -19,11 +19,10 @@
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>azcam_server.start</code></h1>
+<h1 class="title">Module <code>azcam_console.utils</code></h1>
 </header>
 <section id="section-intro">
-<p>Startup script for azcam.</p>
-<p>For installations, this is the "azcamserver" command.</p>
+<p><em>azcam.utils</em> contains general purpose support commands used throughout azcam.</p>
 </section>
 <section>
 </section>
@@ -32,23 +31,124 @@
 <section>
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
-<dt id="azcam_server.start.main"><code class="name flex">
-<span>def <span class="ident">main</span></span>(<span>)</span>
+<dt id="azcam_console.utils.beep"><code class="name flex">
+<span>def <span class="ident">beep</span></span>(<span>frequency=2000, duration=500) ‑> None</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Method for the azcamserver command.
-Required argument is a startup script name.
-Local optional arguments are:
--venv path_to_ve_activation_script
--python system_python_command (default is "ipython &ndash;profile azcam")</p>
-<p>Usage example:
-azcamserver azcam_itl.server -venv ve_activation_path -python python3</p></div>
+<div class="desc"><p>Play a sound.
+Install beep on Linux systems.</p></div>
 </dd>
-<dt id="azcam_server.start.start"><code class="name flex">
-<span>def <span class="ident">start</span></span>(<span>)</span>
+<dt id="azcam_console.utils.file_browser"><code class="name flex">
+<span>def <span class="ident">file_browser</span></span>(<span>Path: str = '', SelectString: str = '*.*', Label: str = '') ‑> list</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Method called from azcam.<strong>main</strong>.py</p></div>
+<div class="desc"><p>Filebrowser GUI to select files.
+This is the tcl/tk version.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>Path</code></strong></dt>
+<dd>Starting path for selection.</dd>
+<dt><strong><code>SelectString</code></strong></dt>
+<dd>Selection string like [('all files',('<em>.</em>'))] or <em>folder</em> to select folders.</dd>
+<dt><strong><code>Label</code></strong></dt>
+<dd>Dialog box label.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>list of selected files/folders or None</p></div>
+</dd>
+<dt id="azcam_console.utils.find_file"><code class="name flex">
+<span>def <span class="ident">find_file</span></span>(<span>filename, include_curdir=False) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Find the absolute filename for a file in the current search path.
+Set include_curdir True to add curdir() to search path.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>filename</code></strong></dt>
+<dd>Name of file.</dd>
+<dt><strong><code>include_curdir</code></strong></dt>
+<dd>True to include current folder in sys.path.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>Cleaned path name</p>
+<h2 id="raises">Raises</h2>
+<p>FileNotFoundError if file not found.</p></div>
+</dd>
+<dt id="azcam_console.utils.find_file_in_sequence"><code class="name flex">
+<span>def <span class="ident">find_file_in_sequence</span></span>(<span>file_root: str, file_number: int = 1) ‑> tuple</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the Nth file in an image sequence where N is file_number (-1 for first file).</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>file_root</code></strong></dt>
+<dd>image file root name.</dd>
+<dt><strong><code>file_number</code></strong></dt>
+<dd>image file number in sequence.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>tuple (filename,sequencenumber).</p></div>
+</dd>
+<dt id="azcam_console.utils.get_image_roi"><code class="name flex">
+<span>def <span class="ident">get_image_roi</span></span>(<span>) ‑> list</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get the data and noise regions of interest in image image coordinates.
+Check for ROI's in the following order:
+- azcam.db.imageroi if defined
+- display.roi if defined</p>
+<h2 id="returns">Returns</h2>
+<p>list of ROIs</p></div>
+</dd>
+<dt id="azcam_console.utils.get_tools"><code class="name flex">
+<span>def <span class="ident">get_tools</span></span>(<span>tool_names: list) ‑> list</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return a list of tool objects from a list of their names.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>tool_names</code></strong></dt>
+<dd>list of the tool names to get</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>list of tool objects</p></div>
+</dd>
+<dt id="azcam_console.utils.make_file_folder"><code class="name flex">
+<span>def <span class="ident">make_file_folder</span></span>(<span>subfolder: str, increment: bool = True, use_number: bool = False) ‑> tuple</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a new subfolder in the current FileFolder.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>subfolder</code></strong></dt>
+<dd>subfolder name to create</dd>
+<dt><strong><code>increment</code></strong></dt>
+<dd>
+<ul>
+<li>if True, subfolder name may be incremented to create a unique name</li>
+</ul>
+</dd>
+<dt><strong><code>use_number</code></strong></dt>
+<dd>
+<ul>
+<li>if True, starts with '1' after Subfolder name (e.g. report1 not report)</li>
+</ul>
+</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>tuple (currentfolder,newfolder)</p></div>
+</dd>
+<dt id="azcam_console.utils.set_image_roi"><code class="name flex">
+<span>def <span class="ident">set_image_roi</span></span>(<span>roi: list = []) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Set the global image region of interest "db.imageroi".
+If roi is not specified, use display ROI.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>roi</code></strong></dt>
+<dd>ROI list or []</dd>
+</dl></div>
 </dd>
 </dl>
 </section>
@@ -63,13 +163,19 @@ azcamserver azcam_itl.server -venv ve_activation_path -python python3</p></div>
 <ul id="index">
 <li><h3>Super-module</h3>
 <ul>
-<li><code><a title="azcam_server" href="index.html">azcam_server</a></code></li>
+<li><code><a title="azcam_console" href="index.html">azcam_console</a></code></li>
 </ul>
 </li>
 <li><h3><a href="#header-functions">Functions</a></h3>
 <ul class="">
-<li><code><a title="azcam_server.start.main" href="#azcam_server.start.main">main</a></code></li>
-<li><code><a title="azcam_server.start.start" href="#azcam_server.start.start">start</a></code></li>
+<li><code><a title="azcam_console.utils.beep" href="#azcam_console.utils.beep">beep</a></code></li>
+<li><code><a title="azcam_console.utils.file_browser" href="#azcam_console.utils.file_browser">file_browser</a></code></li>
+<li><code><a title="azcam_console.utils.find_file" href="#azcam_console.utils.find_file">find_file</a></code></li>
+<li><code><a title="azcam_console.utils.find_file_in_sequence" href="#azcam_console.utils.find_file_in_sequence">find_file_in_sequence</a></code></li>
+<li><code><a title="azcam_console.utils.get_image_roi" href="#azcam_console.utils.get_image_roi">get_image_roi</a></code></li>
+<li><code><a title="azcam_console.utils.get_tools" href="#azcam_console.utils.get_tools">get_tools</a></code></li>
+<li><code><a title="azcam_console.utils.make_file_folder" href="#azcam_console.utils.make_file_folder">make_file_folder</a></code></li>
+<li><code><a title="azcam_console.utils.set_image_roi" href="#azcam_console.utils.set_image_roi">set_image_roi</a></code></li>
 </ul>
 </li>
 </ul>

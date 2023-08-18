@@ -71,6 +71,39 @@ May be extended, do not override.</p></div>
 <div class="desc"><p>Execute a command string received from a client over the command socket.
 Returns the reply string, always starting with OK or ERROR.</p></div>
 </dd>
+<dt id="azcam_server.cmdserver.CommandServer.execute_command"><code class="name flex">
+<span>def <span class="ident">execute_command</span></span>(<span>self, tool: Callable, args: list, kwargs: dict = {}) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Executes a tool command which has been parsed into tool method and arguments and
+returns its reply string.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>tool</code></strong></dt>
+<dd>tool object (not name)</dd>
+<dt><strong><code>args</code></strong></dt>
+<dd>list of arguments</dd>
+<dt><strong><code>kwargs</code></strong></dt>
+<dd>dictionary of keyword:value pairs for arguments</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>reply</code></dt>
+<dd>reply from command executed. Always starts with OK or ERROR.</dd>
+</dl></div>
+</dd>
+<dt id="azcam_server.cmdserver.CommandServer.parse_command_string"><code class="name flex">
+<span>def <span class="ident">parse_command_string</span></span>(<span>self, command: str, case_insensitive: int = 0)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Parse a command string into tool and arguments.
+If command does not start with a dotted object.method token, then
+assume it is the method of the default_tool.</p>
+<p>Returns (objid, args, kwargs)
+objid is a bound method of a class
+args is a list of strings
+kwargs is a dict of strings</p></div>
+</dd>
 <dt id="azcam_server.cmdserver.CommandServer.start"><code class="name flex">
 <span>def <span class="ident">start</span></span>(<span>self, port=-1)</span>
 </code></dt>
@@ -184,6 +217,8 @@ May be extended, do not override.</p></div>
 <ul class="">
 <li><code><a title="azcam_server.cmdserver.CommandServer.begin" href="#azcam_server.cmdserver.CommandServer.begin">begin</a></code></li>
 <li><code><a title="azcam_server.cmdserver.CommandServer.command" href="#azcam_server.cmdserver.CommandServer.command">command</a></code></li>
+<li><code><a title="azcam_server.cmdserver.CommandServer.execute_command" href="#azcam_server.cmdserver.CommandServer.execute_command">execute_command</a></code></li>
+<li><code><a title="azcam_server.cmdserver.CommandServer.parse_command_string" href="#azcam_server.cmdserver.CommandServer.parse_command_string">parse_command_string</a></code></li>
 <li><code><a title="azcam_server.cmdserver.CommandServer.start" href="#azcam_server.cmdserver.CommandServer.start">start</a></code></li>
 <li><code><a title="azcam_server.cmdserver.CommandServer.stop" href="#azcam_server.cmdserver.CommandServer.stop">stop</a></code></li>
 </ul>

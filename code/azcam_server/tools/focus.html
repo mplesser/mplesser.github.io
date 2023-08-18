@@ -35,6 +35,7 @@
 <dl>
 <dt id="azcam_server.tools.focus.Focus"><code class="flex name class">
 <span>class <span class="ident">Focus</span></span>
+<span>(</span><span>tool_id='focus', description=None)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Class for focusing a camera.</p>
@@ -114,7 +115,7 @@ The focus sequence performed is:</p>
 <div class="desc"><p>Reset focus tool to default values.</p></div>
 </dd>
 <dt id="azcam_server.tools.focus.Focus.run"><code class="name flex">
-<span>def <span class="ident">run</span></span>(<span>self, exposure_time: [<class 'float'>, <class 'str'>] = 'prompt', number_exposures: [<class 'int'>, <class 'str'>] = 'prompt', focus_step: [<class 'float'>, <class 'str'>] = 'prompt', detector_shift: [<class 'int'>, <class 'str'>] = 'prompt')</span>
+<span>def <span class="ident">run</span></span>(<span>self, exposure_time: float, number_exposures: int, focus_step: float, detector_shift: int)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Execute the focus sequence.

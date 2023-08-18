@@ -47,6 +47,20 @@
 </ul>
 <h3>Methods</h3>
 <dl>
+<dt id="azcam_console.parameters_console.ParametersConsole.get_local_par"><code class="name flex">
+<span>def <span class="ident">get_local_par</span></span>(<span>self, par_dict_id: Dict, attribute: Any, value: Any = 'default', prompt_string: str = '', default: Any = None) ‑> Any</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return a parameter from a par_dict database, or prompt as needed.
+The new value is saved in the database.</p>
+<p>:param str par_dict_id: Parameter dictionary name in par_dict
+:param str attribute: Name of attribute, used as dictionary key
+:param str value: "default" or "prompt" or a value
+:param str prompt: Prompt message
+:param str default: Default value to be used
+:return str:
+parameter</p></div>
+</dd>
 <dt id="azcam_console.parameters_console.ParametersConsole.get_par"><code class="name flex">
 <span>def <span class="ident">get_par</span></span>(<span>self, parameter: str) ‑> Any</span>
 </code></dt>
@@ -59,6 +73,17 @@
 </dl>
 <h2 id="returns">Returns</h2>
 <p>value (Any): value of the parameter</p></div>
+</dd>
+<dt id="azcam_console.parameters_console.ParametersConsole.set_local_par"><code class="name flex">
+<span>def <span class="ident">set_local_par</span></span>(<span>self, par_dict_id, attribute, value) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Set a parameter in a par_dict database.</p>
+<p>:param str par_dict_id: Parameter dictionary name in par_dict
+:param str attribute: Name of attribute, used as dictionary key
+:param str value: "default" or "prompt" or a value
+:return:
+None</p></div>
 </dd>
 <dt id="azcam_console.parameters_console.ParametersConsole.set_par"><code class="name flex">
 <span>def <span class="ident">set_par</span></span>(<span>self, parameter: str, value: Any = None) ‑> None</span>
@@ -96,7 +121,9 @@
 <li>
 <h4><code><a title="azcam_console.parameters_console.ParametersConsole" href="#azcam_console.parameters_console.ParametersConsole">ParametersConsole</a></code></h4>
 <ul class="">
+<li><code><a title="azcam_console.parameters_console.ParametersConsole.get_local_par" href="#azcam_console.parameters_console.ParametersConsole.get_local_par">get_local_par</a></code></li>
 <li><code><a title="azcam_console.parameters_console.ParametersConsole.get_par" href="#azcam_console.parameters_console.ParametersConsole.get_par">get_par</a></code></li>
+<li><code><a title="azcam_console.parameters_console.ParametersConsole.set_local_par" href="#azcam_console.parameters_console.ParametersConsole.set_local_par">set_local_par</a></code></li>
 <li><code><a title="azcam_console.parameters_console.ParametersConsole.set_par" href="#azcam_console.parameters_console.ParametersConsole.set_par">set_par</a></code></li>
 </ul>
 </li>
