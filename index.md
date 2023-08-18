@@ -6,7 +6,7 @@
   - [University of Arizona](https://www.arizona.edu)
 
 ## Software Documentation
-  - [AzCam](https://mplesser.github.io/azcam/)
+  - [AzCam](https://azcam.readthedocs.io)
   - [GitHub repos](https://github.com/mplesser)
 
 # Links for Michael Lesser
