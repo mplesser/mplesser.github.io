@@ -8,6 +8,7 @@
 ## Software Documentation
   - [AzCam](https://azcam.readthedocs.io)
   - [GitHub repos](https://github.com/mplesser)
+  - [GitHub code pages](https://mplesser.github.io/code)
 
 # Links for Michael Lesser
 
