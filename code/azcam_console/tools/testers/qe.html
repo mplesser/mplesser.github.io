@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
 <title>azcam_console.tools.testers.qe API documentation</title>
-<meta name="description" content="" />
+<meta name="description" content="Quantum Efficiency (QE) tester for azcam.
+This version uses Power Meter (not diodes) for calibration." />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -22,6 +23,8 @@
 <h1 class="title">Module <code>azcam_console.tools.testers.qe</code></h1>
 </header>
 <section id="section-intro">
+<p>Quantum Efficiency (QE) tester for azcam.
+This version uses Power Meter (not diodes) for calibration.</p>
 </section>
 <section>
 </section>
@@ -32,8 +35,8 @@
 <section>
 <h2 class="section-title" id="header-classes">Classes</h2>
 <dl>
-<dt id="azcam_console.tools.testers.qe.Qe"><code class="flex name class">
-<span>class <span class="ident">Qe</span></span>
+<dt id="azcam_console.tools.testers.qe.QE"><code class="flex name class">
+<span>class <span class="ident">QE</span></span>
 </code></dt>
 <dd>
 <div class="desc"><p>Quantum Efficiency (QE) acquisition and analysis.</p>
@@ -52,7 +55,7 @@
 </ul>
 <h3>Instance variables</h3>
 <dl>
-<dt id="azcam_console.tools.testers.qe.Qe.data_file"><code class="name">var <span class="ident">data_file</span></code></dt>
+<dt id="azcam_console.tools.testers.qe.QE.data_file"><code class="name">var <span class="ident">data_file</span></code></dt>
 <dd>
 <p class="inheritance">
 <em>Inherited from:</em>
@@ -60,7 +63,7 @@
 </p>
 <div class="desc inherited"><p>output data file</p></div>
 </dd>
-<dt id="azcam_console.tools.testers.qe.Qe.report_file"><code class="name">var <span class="ident">report_file</span></code></dt>
+<dt id="azcam_console.tools.testers.qe.QE.report_file"><code class="name">var <span class="ident">report_file</span></code></dt>
 <dd>
 <p class="inheritance">
 <em>Inherited from:</em>
@@ -71,21 +74,21 @@
 </dl>
 <h3>Methods</h3>
 <dl>
-<dt id="azcam_console.tools.testers.qe.Qe.acquire"><code class="name flex">
+<dt id="azcam_console.tools.testers.qe.QE.acquire"><code class="name flex">
 <span>def <span class="ident">acquire</span></span>(<span>self)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Acquire a series of flats for QE measurement.
 Assumes timing code and binning is set as desired.</p></div>
 </dd>
-<dt id="azcam_console.tools.testers.qe.Qe.analyze"><code class="name flex">
+<dt id="azcam_console.tools.testers.qe.QE.analyze"><code class="name flex">
 <span>def <span class="ident">analyze</span></span>(<span>self)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Analyze an exisiting QE series of flats.
 Includes Newport power meter calibration.</p></div>
 </dd>
-<dt id="azcam_console.tools.testers.qe.Qe.make_mdfile"><code class="name flex">
+<dt id="azcam_console.tools.testers.qe.QE.make_mdfile"><code class="name flex">
 <span>def <span class="ident">make_mdfile</span></span>(<span>self, md_file, lines=[])</span>
 </code></dt>
 <dd>
@@ -95,7 +98,7 @@ Includes Newport power meter calibration.</p></div>
 </p>
 <div class="desc inherited"><p>Create a markdown file from lines.</p></div>
 </dd>
-<dt id="azcam_console.tools.testers.qe.Qe.make_rstfile"><code class="name flex">
+<dt id="azcam_console.tools.testers.qe.QE.make_rstfile"><code class="name flex">
 <span>def <span class="ident">make_rstfile</span></span>(<span>self, rst_file, lines=[])</span>
 </code></dt>
 <dd>
@@ -105,7 +108,7 @@ Includes Newport power meter calibration.</p></div>
 </p>
 <div class="desc inherited"><p>Create an RST file from lines.</p></div>
 </dd>
-<dt id="azcam_console.tools.testers.qe.Qe.md2pdf"><code class="name flex">
+<dt id="azcam_console.tools.testers.qe.QE.md2pdf"><code class="name flex">
 <span>def <span class="ident">md2pdf</span></span>(<span>self, filename, options=[], create_html=False)</span>
 </code></dt>
 <dd>
@@ -117,7 +120,7 @@ Includes Newport power meter calibration.</p></div>
 Filename extension is optional.
 Optionally also create an html file.</p></div>
 </dd>
-<dt id="azcam_console.tools.testers.qe.Qe.merge_pdf"><code class="name flex">
+<dt id="azcam_console.tools.testers.qe.QE.merge_pdf"><code class="name flex">
 <span>def <span class="ident">merge_pdf</span></span>(<span>self, input_files=[], output_file='combined.pdf')</span>
 </code></dt>
 <dd>
@@ -127,7 +130,7 @@ Optionally also create an html file.</p></div>
 </p>
 <div class="desc inherited"><p>Merge multiple PDF files into one.</p></div>
 </dd>
-<dt id="azcam_console.tools.testers.qe.Qe.parse_files"><code class="name flex">
+<dt id="azcam_console.tools.testers.qe.QE.parse_files"><code class="name flex">
 <span>def <span class="ident">parse_files</span></span>(<span>self)</span>
 </code></dt>
 <dd>
@@ -137,13 +140,13 @@ Optionally also create an html file.</p></div>
 </p>
 <div class="desc inherited"><p>Parse image set to create file information dict.</p></div>
 </dd>
-<dt id="azcam_console.tools.testers.qe.Qe.plot"><code class="name flex">
+<dt id="azcam_console.tools.testers.qe.QE.plot"><code class="name flex">
 <span>def <span class="ident">plot</span></span>(<span>self)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Plot QE data.</p></div>
 </dd>
-<dt id="azcam_console.tools.testers.qe.Qe.read_datafile"><code class="name flex">
+<dt id="azcam_console.tools.testers.qe.QE.read_datafile"><code class="name flex">
 <span>def <span class="ident">read_datafile</span></span>(<span>self, filename='default')</span>
 </code></dt>
 <dd>
@@ -153,13 +156,13 @@ Optionally also create an html file.</p></div>
 </p>
 <div class="desc inherited"><p>Read data file and set tool as valid.</p></div>
 </dd>
-<dt id="azcam_console.tools.testers.qe.Qe.report"><code class="name flex">
+<dt id="azcam_console.tools.testers.qe.QE.report"><code class="name flex">
 <span>def <span class="ident">report</span></span>(<span>self)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Make report files.</p></div>
 </dd>
-<dt id="azcam_console.tools.testers.qe.Qe.rst2pdf"><code class="name flex">
+<dt id="azcam_console.tools.testers.qe.QE.rst2pdf"><code class="name flex">
 <span>def <span class="ident">rst2pdf</span></span>(<span>self, filename, options=[])</span>
 </code></dt>
 <dd>
@@ -171,7 +174,7 @@ Optionally also create an html file.</p></div>
 Filename extension is optional.
 Also create an html file (currently required).</p></div>
 </dd>
-<dt id="azcam_console.tools.testers.qe.Qe.write_datafile"><code class="name flex">
+<dt id="azcam_console.tools.testers.qe.QE.write_datafile"><code class="name flex">
 <span>def <span class="ident">write_datafile</span></span>(<span>self)</span>
 </code></dt>
 <dd>
@@ -181,7 +184,7 @@ Also create an html file (currently required).</p></div>
 </p>
 <div class="desc inherited"><p>Write data file as a json dump …</p></div>
 </dd>
-<dt id="azcam_console.tools.testers.qe.Qe.write_report"><code class="name flex">
+<dt id="azcam_console.tools.testers.qe.QE.write_report"><code class="name flex">
 <span>def <span class="ident">write_report</span></span>(<span>self, report_file, lines=[])</span>
 </code></dt>
 <dd>
@@ -210,23 +213,23 @@ Also create an html file (currently required).</p></div>
 <li><h3><a href="#header-classes">Classes</a></h3>
 <ul>
 <li>
-<h4><code><a title="azcam_console.tools.testers.qe.Qe" href="#azcam_console.tools.testers.qe.Qe">Qe</a></code></h4>
+<h4><code><a title="azcam_console.tools.testers.qe.QE" href="#azcam_console.tools.testers.qe.QE">QE</a></code></h4>
 <ul class="two-column">
-<li><code><a title="azcam_console.tools.testers.qe.Qe.acquire" href="#azcam_console.tools.testers.qe.Qe.acquire">acquire</a></code></li>
-<li><code><a title="azcam_console.tools.testers.qe.Qe.analyze" href="#azcam_console.tools.testers.qe.Qe.analyze">analyze</a></code></li>
-<li><code><a title="azcam_console.tools.testers.qe.Qe.data_file" href="basetester.html#azcam_console.tools.testers.qe.Qe.data_file">data_file</a></code></li>
-<li><code><a title="azcam_console.tools.testers.qe.Qe.make_mdfile" href="report.html#azcam_console.tools.testers.qe.Qe.make_mdfile">make_mdfile</a></code></li>
-<li><code><a title="azcam_console.tools.testers.qe.Qe.make_rstfile" href="report.html#azcam_console.tools.testers.qe.Qe.make_rstfile">make_rstfile</a></code></li>
-<li><code><a title="azcam_console.tools.testers.qe.Qe.md2pdf" href="report.html#azcam_console.tools.testers.qe.Qe.md2pdf">md2pdf</a></code></li>
-<li><code><a title="azcam_console.tools.testers.qe.Qe.merge_pdf" href="report.html#azcam_console.tools.testers.qe.Qe.merge_pdf">merge_pdf</a></code></li>
-<li><code><a title="azcam_console.tools.testers.qe.Qe.parse_files" href="basetester.html#azcam_console.tools.testers.qe.Qe.parse_files">parse_files</a></code></li>
-<li><code><a title="azcam_console.tools.testers.qe.Qe.plot" href="#azcam_console.tools.testers.qe.Qe.plot">plot</a></code></li>
-<li><code><a title="azcam_console.tools.testers.qe.Qe.read_datafile" href="basetester.html#azcam_console.tools.testers.qe.Qe.read_datafile">read_datafile</a></code></li>
-<li><code><a title="azcam_console.tools.testers.qe.Qe.report" href="#azcam_console.tools.testers.qe.Qe.report">report</a></code></li>
-<li><code><a title="azcam_console.tools.testers.qe.Qe.report_file" href="basetester.html#azcam_console.tools.testers.qe.Qe.report_file">report_file</a></code></li>
-<li><code><a title="azcam_console.tools.testers.qe.Qe.rst2pdf" href="report.html#azcam_console.tools.testers.qe.Qe.rst2pdf">rst2pdf</a></code></li>
-<li><code><a title="azcam_console.tools.testers.qe.Qe.write_datafile" href="basetester.html#azcam_console.tools.testers.qe.Qe.write_datafile">write_datafile</a></code></li>
-<li><code><a title="azcam_console.tools.testers.qe.Qe.write_report" href="basetester.html#azcam_console.tools.testers.qe.Qe.write_report">write_report</a></code></li>
+<li><code><a title="azcam_console.tools.testers.qe.QE.acquire" href="#azcam_console.tools.testers.qe.QE.acquire">acquire</a></code></li>
+<li><code><a title="azcam_console.tools.testers.qe.QE.analyze" href="#azcam_console.tools.testers.qe.QE.analyze">analyze</a></code></li>
+<li><code><a title="azcam_console.tools.testers.qe.QE.data_file" href="basetester.html#azcam_console.tools.testers.qe.QE.data_file">data_file</a></code></li>
+<li><code><a title="azcam_console.tools.testers.qe.QE.make_mdfile" href="report.html#azcam_console.tools.testers.qe.QE.make_mdfile">make_mdfile</a></code></li>
+<li><code><a title="azcam_console.tools.testers.qe.QE.make_rstfile" href="report.html#azcam_console.tools.testers.qe.QE.make_rstfile">make_rstfile</a></code></li>
+<li><code><a title="azcam_console.tools.testers.qe.QE.md2pdf" href="report.html#azcam_console.tools.testers.qe.QE.md2pdf">md2pdf</a></code></li>
+<li><code><a title="azcam_console.tools.testers.qe.QE.merge_pdf" href="report.html#azcam_console.tools.testers.qe.QE.merge_pdf">merge_pdf</a></code></li>
+<li><code><a title="azcam_console.tools.testers.qe.QE.parse_files" href="basetester.html#azcam_console.tools.testers.qe.QE.parse_files">parse_files</a></code></li>
+<li><code><a title="azcam_console.tools.testers.qe.QE.plot" href="#azcam_console.tools.testers.qe.QE.plot">plot</a></code></li>
+<li><code><a title="azcam_console.tools.testers.qe.QE.read_datafile" href="basetester.html#azcam_console.tools.testers.qe.QE.read_datafile">read_datafile</a></code></li>
+<li><code><a title="azcam_console.tools.testers.qe.QE.report" href="#azcam_console.tools.testers.qe.QE.report">report</a></code></li>
+<li><code><a title="azcam_console.tools.testers.qe.QE.report_file" href="basetester.html#azcam_console.tools.testers.qe.QE.report_file">report_file</a></code></li>
+<li><code><a title="azcam_console.tools.testers.qe.QE.rst2pdf" href="report.html#azcam_console.tools.testers.qe.QE.rst2pdf">rst2pdf</a></code></li>
+<li><code><a title="azcam_console.tools.testers.qe.QE.write_datafile" href="basetester.html#azcam_console.tools.testers.qe.QE.write_datafile">write_datafile</a></code></li>
+<li><code><a title="azcam_console.tools.testers.qe.QE.write_report" href="basetester.html#azcam_console.tools.testers.qe.QE.write_report">write_report</a></code></li>
 </ul>
 </li>
 </ul>
