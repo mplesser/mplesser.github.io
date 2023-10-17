@@ -1,4 +1,4 @@
-# Home
+# Home - mplesser
 
 ## ITL Related Links
   - [ITL Home](https://www.itl.arizona.edu)
@@ -9,7 +9,7 @@
   - [AzCam](https://azcam.readthedocs.io)
   - [GitHub repos](https://github.com/mplesser)
 
-# Links for Michael Lesser
+## Links for Michael Lesser
 
 - [email](mailto:mlesser@arizona.edu)
 - [linkedin](https://www.linkedin.com/in/michael-lesser-29125618)
