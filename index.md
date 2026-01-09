@@ -2,7 +2,7 @@
 
 ## Software Documentation
   - [AzCam](https://azcam.readthedocs.io)
-  - [imcon](https://mplesser.github.io/imcon/))
+  - [imcon](https://mplesser.github.io/imcon/)
   - [GitHub repos](https://github.com/mplesser)
 
 ## Links for Michael Lesser
